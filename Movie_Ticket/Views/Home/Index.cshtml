@@ -1,0 +1,40 @@
+﻿@model Movie_Ticket.ViewModels.FilmIndex
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="OneCikan">
+    <div class="OneMesaj">
+        <img src="" class="move" />
+        <div class="b">ATATÜRK SİNEMALARINA HOŞGELDİNİZ</div>
+        <div class="right">
+            <div class="Slider">
+
+                @foreach (var item in Model.Films)
+                {
+
+
+                    <div class="Skapla">
+
+
+                        <img src="~/Content/upload/@item.Afis" class="zz" />
+                        <div class="karart"></div>
+                        <ul class="sliderbilgi">
+                            <li class="baslik">@item.Adi</li>
+                            <li>@item.Dil</li>
+                            <li>@item.FilmTuru.Turu</li>
+                            <li>@item.Suresi</li>
+                            <li><a href="detaylar/@item.ID"><img src="~/Content/img/-_Watching-Movie-Theater-Hall-View-People-04-512.png" alt="" style="width:105px;height:55px" /></a></li>
+                        </ul>
+                    </div>
+
+
+                }
+            </div>
+        </div>
+
+
+        <div class="clear"></div>
+    </div>
+</div>

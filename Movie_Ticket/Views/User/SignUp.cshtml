@@ -1,0 +1,79 @@
+﻿@model Movie_Ticket.ViewModels.UyeOl
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="~/Content/css/style.css" />
+    <title>Kayıt Ol</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/img/iconfinder_Multimedia_Film_movie_cinema_multimedia_player_3841825.ico" />
+</head>
+<body class="kayitbgnew">
+    <!-- Header -->
+    <div id="left">
+        <div class="Header">
+            <style>
+                body {
+                    background-color: darkred;
+                }
+            </style>
+            <img src="~/Content/img/Ataturk-logo-BF487F94B0-seeklogo.com.png" style="width:100px;height:100px" alt="Logo" alt="Logo" class="saga-kaydir"
+            <p>
+                <b>
+                    ATATÜRK SİNEMALARI
+                </b>
+            </p>
+        </div>
+        <img src="~/Content/img/gsYDCZ3B0UO5kfKHRh2-Nw.jpg" width="100%" ;=; height="180px" />
+    </div>
+    <!-- Body -->
+    <div id="Body2" style="height:100px">
+
+        <!-- Body Kategori -->
+        <div class="BKapla">
+
+            <div class="BKat">
+
+                <!-- Sol Menü -->
+                <ul class="BSol">
+                    <li><a href="@Url.RouteUrl("Home")">ANASAYFA</a></li>
+
+                </ul>
+                <!-- Sağ Menü -->
+                <ul class="BSag">
+                    <li><div class="k1"></div><a href="@Url.RouteUrl("SignUp")">KAYIT OL</a></li>
+                    <li><div class="g1"></div><a href="@Url.RouteUrl("SignIn")">GİRİŞ</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+
+            <div class="clear"></div>
+           
+        </div>
+    </div>
+    
+    <!-- Giriş Bölümü -->
+    <div id="KayitBolumu">
+        <div class="baslik">KAYIT OL </div>
+        <div class="aciklama">
+            <p><img src="~/Content/img/6478-200.png" style="width:85px;height:80px" /></p>
+        </div>
+        @using (Html.BeginForm("SignUp", "User", FormMethod.Post))
+        {
+            @Html.EditorFor(Model => Model.Ad, new { htmlAttributes = new { @class = "form-control", @placeholder = "Adınızı Girin" } })
+            @Html.EditorFor(Model => Model.Soyad, new { htmlAttributes = new { @class = "form-control", @placeholder = "Soyadınızı Girin" } })
+            @Html.EditorFor(Model => Model.Ceptel, new { htmlAttributes = new { @class = "form-control", @placeholder = "0(5--)--- -- --" } })
+            @Html.EditorFor(Model => Model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "E-mail Girin" } })
+            @Html.EditorFor(Model => Model.SifreHash, new { htmlAttributes = new { @class = "form-control", @placeholder = "Şifre Girin", @type = "password" } })
+
+
+            <button>KAYIT OL</button>
+        }
+
+    </div>
+
+</body>
+</html>

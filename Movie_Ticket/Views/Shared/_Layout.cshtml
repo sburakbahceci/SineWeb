@@ -1,0 +1,109 @@
+﻿@using System.Web.Optimization
+@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+
+    <title>Atatürk Sineması</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/img/iconfinder_Multimedia_Film_movie_cinema_multimedia_player_3841825.ico" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <!-- Jquery Javascript Libary Plugin -->
+    <script src="~/Content/plugins/jquery/jquery-1.11.3.js"></script>
+    <!-- Owl Cerousel Slider Plugin -->
+   
+    <!-- System Cumtop Js-->
+    <script src="~/Content/plugins/datatable/jquery.dataTables.min.js"></script>
+    <script src="~/Content/js/custom.js"></script>
+    <link href="~/Content/plugins/heart/fonts/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/heart/css/icons.css" rel="stylesheet" />
+    <link href="~/Content/css/SeatStyle.css" rel="stylesheet" />
+    @*<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Content/css/bootstrap.css" rel="stylesheet" />*@
+
+    @*@Styles.Render("~/styles")
+        @Scripts.Render("~/scripts")*@
+
+</head>
+<body>
+
+    <div id="left">
+        <div class="Header">
+            <style>
+                body {
+                    background-color: darkred;
+                }
+            </style>
+            <img src="~/Content/img/Ataturk-logo-BF487F94B0-seeklogo.com.png" style="width:100px;height:100px" alt="Logo" class="saga-kaydir"
+            <p><b>
+    ATATÜRK SİNEMALARI
+</b>
+            </p>
+        </div>
+    </div>
+
+    <div id="Body2">
+
+        <img src="~/Content/img/gsYDCZ3B0UO5kfKHRh2-Nw.jpg" style="width:100%;height:170px;position:absolute;z-index:-1;min-width:1300px!important" />
+        
+        <div class="BKapla">
+            
+            <div class="BKat">
+
+                <ul class="BSol">
+                    <li><a href="@Url.RouteUrl("Home")">ANASAYFA</a></li>
+
+                </ul>
+
+                <ul class="BSag">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><div class="g1"></div><a href="@Url.RouteUrl("Logout")">ÇIKIŞ YAP</a></li>
+                    }
+                    else
+                    {
+                        <li><div class="k1"></div><a href="@Url.RouteUrl("SignUp")">KAYDOL</a></li>
+                        <li><div class="g1"></div><a href="@Url.RouteUrl("SignIn")">GİRİŞ YAP</a></li>
+                    }
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Öne Çıkan Filmler -->
+    @RenderBody()
+
+    <!-- Footer -->
+    <div id="Footer">
+        <div class="FooterUst">
+            <div class="Footer">
+
+                <div class="FSosyalMedya" style="width:75%">
+                    <div class="SB" style="margin-left:180px">WEB TABANLI PROGRAMLAMA</div>
+                    <div class="SA" style="margin-left:180px">Sinema Proje Ödevi</div>
+                    <div class="SB" style="margin-left:180px">Safa Burak BAHÇECİ</div>
+                    <div class="Hesaplar" style="margin-left:400px">
+                        <a href="https://www.facebook.com/safaburakbahceci"><div class="Sh Facebook"></div></a>
+                        <a href="https://twitter.com/sburakbahceci"><div class="Sh Twitter"></div></a>
+                        <a href="https://accounts.google.com/SignOutOptions?hl=tr&continue=https://myaccount.google.com/%3Futm_source%3DOGB%26utm_medium%3Dact"> <div class="Sh Google"></div></a>
+                        <a href="https://www.instagram.com/sburakbahceci/"><div class="Sh Instagram"></div></a>
+                        <a href="https://www.linkedin.com/in/sburakbahceci"><div class="Sh In"></div></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="FooterAlt">
+            COPYRIGHT 2019 ©  <a href="#">S.BURAK BAHÇECİ</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+@RenderSection("scripts", required: false)
